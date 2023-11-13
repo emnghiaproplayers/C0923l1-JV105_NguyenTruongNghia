@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table{
+        width: 50%;
+        height: 100%;
+    }
+    tr:nth-child(even){
+        background-color: #e8e6e6;
+    }
+    button{
+        width: 70px;
+        height: 30px;
+        border-radius: 5px 5px 5px 5px;
+        color: white;
+        background-color: limegreen;
+    }
+</style>
+<body>
+<h1>Add new product</h1>
+<input id="product">
+<button onclick="addProduct()">Add</button>
+
+<h1>Display Product</h1>
+<table id="tableProduct">
+
+</table>
+
+<script>
+    let arr = ["abc", "xyz", "gggg"];
+
+    function addProduct() {
+        let product = document.getElementById("product").value;
+        if (product.trim() !== "") {
+            arr.push(product);
+            show();
+        } else {
+            alert("Vui lòng nhập tên sản phẩm.");
+        }
+    }
+
+    function show() {
+        let table = document.getElementById('tableProduct');
+        let html = '';
+        for (let i = 0; i < arr.length; i++) {
+            html += "<tr>" +
+                "<td>" + arr[i] + "</td>" +
+                "<td>" + "<button onclick='editProduct(" + i + ")'>Edit</button>" + "</td>" +
+                "<td>" + "<button onclick='deleteProduct(" + i + ")'>Delete</button>" + "</td>"
+                + "</tr>"
+        }
+        table.innerHTML = html;
+    }
+
+    function editProduct(i) {
+        let newName = prompt("Sửa tên sản phẩm: ", arr[i]);
+        arr[i] = newName;
+        show();
+    }
+
+    function deleteProduct(i) {
+        arr.splice(i, 1);
+        show();
+    }
+
+    show();
+
+</script>
+</body>
+</html>
