@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function square(){
+        let n = parseInt(prompt("Nhập n"));
+        alert(n * n);
+    }
+    function circle(){
+        let r = parseInt(prompt("Nhập r"));
+        let c = 2 * 3.14 * r;
+        let s = (c * c)/ (4*3.14);
+        alert("Chu vi: "+ c +", Diện tích: "+ s);
+    }
+    function giaiThua(n){
+        if(n === 0 || n === 1){
+            return 1;
+        }
+        return n * giaiThua(n - 1);
+    }
+
+    function check(){
+        let n = prompt("Nhập n");
+        if (isNaN(n)){
+            alert(n + " là chữ cái");
+        }else {
+            alert(n + " là số");
+        }
+    }
+    function minNum(){
+        let a = parseInt(prompt("Nhập số thứ 1"));
+        let b = parseInt(prompt("Nhập số thứ 2"));
+        let c = parseInt(prompt("Nhập số thứ 3"));
+        alert(Math.min(a,b,c));
+    }
+    function soNguyenDuong(){
+        let a = parseInt(prompt("Nhập số"));
+        if (a > 0){
+            alert("Số dương");
+        }else if (a === 0){
+            alert("Số 0");
+        }else {
+            alert("Số âm");
+        }
+    }
+    function swap(){
+        let a = parseInt(prompt("Nhập số thứ 1"));
+        let b = parseInt(prompt("Nhập số thứ 2"));
+        let temp = a;
+        a = b;
+        b = temp;
+        alert ("a = "+ a + ", b + "+ b);
+    }
+    function reverseMang(){
+        let arr = [];
+        let n = parseInt(prompt("Nhập số lượng phần tử"));
+        for (let i = 0 ; i < n ; i++){
+            let a = prompt("Nhập số thứ "+ (i+1));
+            arr.push(a);
+        }
+        alert(arr.reverse());
+    }
+    function checkKyTu(){
+        let arr = [];
+        let n = parseInt(prompt("Nhập số lượng phần tử"));
+        for (let i = 0 ; i < n ; i++){
+            let a = prompt("Nhập ký tự thứ "+ (i+1));
+            arr.push(a);
+        }
+        let char = prompt(arr + "Nhập ký tự cần tìm");
+        let count = 0;
+        for (let i = 0 ; i < n ; i++){
+            if (char === arr[i]){
+                count++;
+            }
+        }
+        if (count === 0){
+            alert("Ký tự "+ char + " không xuất hiện trong mảng");
+        }else {
+            alert("Ký tự "+ char + " xuất hiện "+ count + " lần");
+        }
+    }
+</script>
+</body>
+</html>
