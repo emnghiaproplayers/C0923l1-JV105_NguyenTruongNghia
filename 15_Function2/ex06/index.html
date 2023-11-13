@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPalindrome(s){
+        //Loại bỏ khoảng trắng và chuyển về ký tự thường của string đó
+        s = s.toLowerCase().replace(/\s/g, '');
+        // Chuyển đổi string thành list
+        //split tách string đó ra thành từng ký tự riêng biệt trong list
+        //reverse đảo ngược list đó
+        //join ghép list đó thành string mới
+        let result = s === s.split('').reverse().join('');
+        alert(result);
+    }
+    let string = "rotor";
+    isPalindrome(string);
+</script>
+</body>
+</html>
