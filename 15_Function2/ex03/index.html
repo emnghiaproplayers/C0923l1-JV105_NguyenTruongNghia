@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="alertMessage()">Bài 1</button>
+<br>
+<input id="num"><button onclick="increase()">Check</button>
+<br>
+<button onclick="soSanh()">So sánh</button>
+<button onclick="show()">Show</button>
+<button onclick="star()">Star</button>
+
+<script>
+    function alertMessage(){
+        alert("Xin chào");
+    }
+    function increase(){
+        let num = document.getElementById("num").value;
+        num++;
+        alert(num);
+    }
+    function soSanh(){
+        let num1 = parseFloat(prompt("Nhập số thứ 1"));
+        let num2 = parseFloat(prompt("Nhập số thứ 2"));
+        if (num1 < num2){
+            alert(num1);
+        }else {
+            alert(num1 + num2);
+        }
+    }
+    function addNumbers() {
+        let firstNum = 4;
+        let secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+    function show(){
+        result = 0;
+        alert(result);
+        result = addNumbers();
+        alert(result);
+    }
+    function star(){
+        arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra"," Aquila"," Ursa Major", "Leo"];
+        let star = prompt("Nhập tên chòm sao");
+        let result = '';
+        for (let i = 0 ; i <arr1.length; i++){
+            if (star === arr1[i]){
+                result = arr2[i];
+                break;
+            }else if (star === arr2[i]){
+                result = arr1[i];
+                break;
+            }else {
+                result = 'Không tồn tại';
+            }
+        }
+        alert(result);
+    }
+
+</script>
+</body>
+</html>
