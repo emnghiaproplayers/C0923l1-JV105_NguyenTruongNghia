@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class temperature{
+        doC;
+        constructor(doC) {
+            this.doC = doC;
+        }
+        getDoC(){
+            return this.doC;
+        }
+        setDoC(doC){
+            this.doC = doC;
+        }
+        getDoF(doC){
+            return doC * 1.8 + 32;
+        }
+        getDoKevin(doC){
+            return doC + 273.15;
+        }
+    }
+    temp = new temperature(25);
+    doC = temp.getDoC();
+    doF = temp.getDoF(doC);
+    doKevin = temp.getDoKevin(doC);
+    document.write("Độ C: "+ doC
+                    + "<br>" + "Độ F: "+ doF +
+                    "<br>" + "Độ Kevin: "+ doKevin);
+</script>
+</body>
+</html>
