@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            battery;
+            message;
+            powerOn;
+            inbox;
+            sentMessage;
+            constructor(name) {
+                this.battery = 100;
+                this.powerOn = false;
+                this.message = '';
+                this.inbox = [];
+                this.sentMessage = [];
+            }
+            checkPowerStatus() {
+                return this.powerOn;
+            }
+
+            togglePower() {
+                this.powerOn = !this.powerOn;
+                this.consumeBattery();
+            }
+
+            chargeBattery() {
+                if (this.powerOn) {
+                    this.battery = Math.min(this.battery + 10, 100);
+                }
+            }
+
+            consumeBattery() {
+                if (this.powerOn) {
+                    this.battery--;
+                }
+            }
+
+            composeMessage(message) {
+                if (this.powerOn) {
+                    this.draftMessage = message;
+                    this.consumeBattery();
+                }
+            }
+
+            receiveMessage(message, sender) {
+                if (this.powerOn) {
+                    this.inbox.push({ sender, message });
+                    this.consumeBattery();
+                }
+            }
+
+            sendMessage(receiver) {
+                if (this.powerOn) {
+                    receiver.receiveMessage(this.draftMessage, this.name);
+                    this.sentMessage.push({ receiver: receiver.name, message: this.draftMessage });
+                    this.draftMessage = '';
+                    this.consumeBattery();
+                }
+            }
+
+            viewInbox() {
+                return this.inbox;
+            }
+
+            viewSentMessages() {
+                return this.sentMessage;
+            }
+
+        }
+        const nokia = new Mobile('Nokia');
+        const iphone = new Mobile('iPhone');
+
+        nokia.togglePower();
+        nokia.composeMessage('Hello from Nokia!');
+        nokia.sendMessage(iphone);
+
+        iphone.togglePower();
+        iphone.receiveMessage('Hello',nokia);
+        console.log(iphone.viewInbox());
+    </script>
+</body>
+</html>
