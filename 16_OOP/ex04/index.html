@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="600"></canvas>
+<script>
+    class Rectangle {
+        _width;
+        _height;
+        constructor(width,height) {
+            this._width = width;
+            this._height = height;
+        }
+
+        getWidth() {
+            return this._width;
+        }
+
+        setWidth(width) {
+            this._width = width;
+        }
+
+        getHeight() {
+            return this._height;
+        }
+
+        setHeight(height) {
+            this._height = height;
+        }
+        getChuVi(){
+            return (this._width + this._height) * 2 ;
+        }
+        getDienTich(){
+            return this._width * this._height;
+        }
+    }
+    let rectangle = new Rectangle(600,200);
+    width = rectangle.getWidth();
+    height = rectangle.getHeight();
+    alert("Chu vi : " + rectangle.getChuVi() + ", Diện tích : "+ rectangle.getDienTich());
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext('2d');
+    ctx.strokeStyle='red';
+    ctx.strokeRect(10, 10, width, height);
+    ctx.fillStyle='blue';
+    ctx.fillRect(10,10,width,height);
+</script>
+</body>
+</html>
