@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let character = prompt("Nhập ký tự: ");
+    let lowerCaseCharacter = character.toLowerCase();
+    if ( lowerCaseCharacter === 'a' ||
+        lowerCaseCharacter === 'e' ||
+        lowerCaseCharacter === 'i' ||
+        lowerCaseCharacter === 'o' ||
+        lowerCaseCharacter === 'u'){
+        document.write('Ký tự '+ lowerCaseCharacter +' là nguyên âm');
+    }else{
+        document.write('Ký tự '+ lowerCaseCharacter + ' là phụ âm');
+    }
+</script>
+</body>
+</html>
