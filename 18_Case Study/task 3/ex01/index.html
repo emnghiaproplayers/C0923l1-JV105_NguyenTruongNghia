@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Nhập số phần tử trong mảng ban đầu'));
+    let a1 = [];
+    let a2 = [];
+    let sum = 0;
+    for(let i = 0 ; i < n ; i++){
+        let num = parseInt(prompt('Nhập phần tử thứ ' + (i+1)));
+        a1.push(num);
+    }
+    for(let j = 0 ; j < a1.length; j++){
+            sum += a1[j];
+            a2.push(sum);
+    }
+    document.write(a2);
+</script>
+</body>
+</html>
