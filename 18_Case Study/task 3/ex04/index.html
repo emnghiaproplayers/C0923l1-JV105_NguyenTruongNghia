@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function nhapSoLuong() {
+        let number = prompt('Nhập số lượng');
+        return number;
+    }
+
+    function donGia(number, price) {
+        return number * price;
+    }
+
+    let choice;
+    let cafe = 10000;
+    let cam = 12000;
+    let carrot = 15000;
+    let tomato = 15000;
+    let water = 10000;
+    let coconut = 10000;
+    let sum = 0;
+    do {
+
+        choice = parseInt(prompt
+        (
+            '========== MENU ========== \n' +
+            '1.Cafe/10000 \n' +
+            '2.Cam vắt/12000 \n' +
+            '3.Nước ép cà rốt/15000 \n' +
+            '4.Nước ép cà chua/15000 \n' +
+            '5.Nước lọc/10000 \n' +
+            '6.Nước dừa/15000 \n' +
+            '7.Kết thúc \n' +
+            'MỜI GỌI NƯỚC UỐNG'
+        ));
+        switch (choice) {
+            case 1 :
+                num = nhapSoLuong();
+                sum += donGia(num, cafe);
+                break;
+            case 2 :
+                num = nhapSoLuong();
+                sum += donGia(num, cam);
+                break;
+            case 3 :
+                num = nhapSoLuong();
+                sum += donGia(num, carrot);
+                break;
+            case 4 :
+                num = nhapSoLuong();
+                sum += donGia(num, tomato);
+                break;
+            case 5 :
+                num = nhapSoLuong();
+                sum += donGia(num, water);
+                break;
+            case 6 :
+                num = nhapSoLuong();
+                sum += donGia(num, coconut);
+                break;
+            case 7 :
+                document.write(sum);
+                break;
+            default :
+                break;
+        }
+
+    } while (choice < 7)
+</script>
+</body>
+</html>
