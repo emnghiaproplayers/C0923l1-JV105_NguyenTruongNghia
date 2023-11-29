@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // function missingValue(A, B) {
+        //     // Tạo một Set chứa các phần tử của mảng A để kiểm tra sự xuất hiện
+        //     const setA = new Set(A);
+        //
+        //     // Sử dụng filter để lọc các phần tử trong mảng B không xuất hiện trong mảng A
+        //     const result = B.filter(element => !setA.has(element));
+        //
+        //     return result;
+        // }
+
+        function missingValue(A, B) {
+            let result = [];
+
+            // Duyệt qua mảng B
+            for (let i = 0; i < B.length; i++) {
+                let currentElement = B[i];
+                let foundInA = false;
+
+                // Kiểm tra xem phần tử hiện tại của B có xuất hiện trong mảng A không
+                for (let j = 0; j < A.length; j++) {
+                    if (A[j] === currentElement) {
+                        foundInA = true;
+                        // Loại bỏ phần tử đã tìm thấy để tránh lặp lại
+                        A.splice(j, 1);
+                        break;
+                    }
+                }
+
+                // Nếu không tìm thấy trong mảng A, thêm vào mảng kết quả
+                if (!foundInA) {
+                    result.push(currentElement);
+                }
+            }
+
+            return result;
+        }
+
+
+        // Ví dụ sử dụng
+        let A = [7, 2, 5, 3, 5, 3];
+        let B = [7, 2, 5, 4, 6, 3, 5, 3];
+
+
+        let result = missingValue(A, B);
+        document.write(result); // Kết quả sẽ là [4, 6]
+    </script>
+</body>
+</html>
