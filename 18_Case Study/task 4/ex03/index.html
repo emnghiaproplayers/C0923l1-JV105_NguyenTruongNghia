@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function commonCharactersCount(s1,s2){
+    let commonCount = 0;
+
+    // Chuyển xâu s2 thành mảng để có thể loại bỏ ký tự khi tìm thấy
+    let s2Array = s2.split('');
+
+    // Duyệt qua xâu s1
+    for (let char of s1) {
+      // Tìm ký tự trong xâu s2
+      let index = s2Array.indexOf(char);
+      console.log(s1[index]);
+
+      // Nếu tìm thấy, tăng biến đếm và loại bỏ ký tự đó khỏi xâu s2
+      if (index !== -1) {
+        commonCount++;
+        s2Array.splice(index, 1);
+      }
+    }
+
+    return commonCount;
+  }
+  let s1 = 'aabbcc';
+  let s2 = 'adcaa';
+  console.log(commonCharactersCount(s1,s2));
+
+</script>
+
+
+</body>
+</html>
