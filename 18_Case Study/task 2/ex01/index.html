@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt('Nhập cạnh tam giác'));
+    for (let i = 1; i<=h ;i++){
+        for (let j = 1 ; j <= i;j++){
+           if (j === 1 || j === i - 1|| i === h){
+               document.write('*');
+           }else{
+               document.write('&nbsp');
+           }
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>
