@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function chuanHoaXau(s) {
+// Chia xâu thành các từ
+let words = s.split(/\s+/);
+
+// Chuyển đổi mỗi từ thành dạng chuẩn hóa
+let normalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
+
+// Kết hợp các từ lại với nhau và thêm một dấu cách giữa chúng
+let result = normalizedWords.join(' ');
+
+return result;
+}
+
+// Ví dụ sử dụng
+let xauInput = "tRuong    TaN   HAI";
+let xauChuanHoa = chuanHoaXau(xauInput);
+console.log(xauChuanHoa);
+</script>
+</body>
+</html>
