@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function differentSymbolsNaive(s){
+        let words = s.split("");
+        let arr = [];
+        for (let i = 0; i < words.length ; i++){
+            if(arr.includes(words[i])){
+                continue;
+            }else {
+                arr.push(words[i]);
+            }
+        }
+        return arr;
+    }
+    let s = 'acbdabggxz';
+    console.log(differentSymbolsNaive(s).length);
+</script>
+</body>
+</html>
